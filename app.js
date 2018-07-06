@@ -1,8 +1,11 @@
-const express           = require('express');
+const express           = require('express'),
+      bodyParser        = require('body-parser');
 const app               = express();
 
 
 app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 app.post('/login', (req, res) => {
     if (
@@ -12,7 +15,7 @@ app.post('/login', (req, res) => {
         res.sendStatus(406);
     }
 
-})
+});
 
 app.get('/', (req,res) => res.render('index'));
 

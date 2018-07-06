@@ -12,13 +12,13 @@ app.use(function(req, res, next) {
 });
 
 app.post('/login', (req, res) => {
-    res.send(req.body);
-    // if (
-    //     req.body.email === 'chuck@example.com' && req.body.password === 'Norris@1234'
-    // ) res.send(200);
-    // else {
-    //     res.sendStatus(406);
-    // }
+
+    if (
+        req.body.email === 'chuck@example.com' && req.body.password === 'Norris@1234'
+    ) res.sendStatus(200);
+    else {
+        res.sendStatus(406);
+    }
 
 });
 

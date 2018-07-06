@@ -12,6 +12,7 @@ app.use(function(req, res, next) {
 });
 
 app.post('/login', (req, res) => {
+    console.log(req.body);
 
     if (
         req.body.email === 'chuck@example.com' && req.body.password === 'Norris@1234'
